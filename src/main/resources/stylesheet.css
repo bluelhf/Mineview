@@ -1,0 +1,8 @@
+.context-menu {
+    -fx-max-height: 200px;
+}
+
+#buildButton {
+    -fx-font-family: "A Antara Distance";
+    -fx-font-size: 96px;
+}

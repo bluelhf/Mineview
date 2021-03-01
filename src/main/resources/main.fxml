@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bluelhf.mineview.main.Controller">
+    <top>
+        <AnchorPane maxHeight="412.0" maxWidth="550.0" prefHeight="412.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+            <GridPane fx:id="done" alignment="CENTER" opacity="0.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                </rowConstraints>
+                <ImageView fitHeight="200.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/checkmark.gif" />
+                </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="All done!" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="310.0" text="You can now exit MineView." textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </GridPane>
+            <GridPane fx:id="loader" opacity="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="NEVER" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="NEVER" />
+                </rowConstraints>
+                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" GridPane.valignment="TOP">
+                    <Image url="@images/loading.gif" />
+                </ImageView>
+                <ListView fx:id="loaderLog" focusTraversable="false" prefHeight="1024.0" prefWidth="1024.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+                </ListView>
+            </GridPane>
+            <GridPane fx:id="content" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="NEVER" />
+                    <ColumnConstraints hgrow="NEVER" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                </rowConstraints>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <Label contentDisplay="CENTER" text="Version">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </GridPane.margin>
+                    <padding>
+                        <Insets left="5.0" right="8.0" />
+                    </padding>
+                </Label>
+                <ComboBox fx:id="versionSelector" onAction="#checkInputs" prefWidth="150.0" promptText="Choose a version" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </ComboBox>
+                <CheckBox fx:id="snapshotCheckbox" mnemonicParsing="false" onAction="#populateVersionSelector" text="View snapshots" GridPane.columnIndex="2">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </CheckBox>
+                <ImageView fx:id="versionLoader" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                    <Image url="@images/loading.gif" />
+                </ImageView>
+                <Label contentDisplay="CENTER" layoutX="10.0" layoutY="19.0" text="Side" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" right="8.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Button fx:id="directorySelector" alignment="TOP_LEFT" onAction="#openDirectorySelector" prefWidth="150.0" text="Choose a directory" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ComboBox fx:id="sideSelector" layoutX="75.0" layoutY="18.0" onAction="#checkInputs" prefWidth="150.0" promptText="Choose a side" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button id="buildButton" fx:id="buildButton" disable="true" mnemonicParsing="false" onAction="#build" prefHeight="1024.0" prefWidth="1024.0" text="Build!" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                    </GridPane.margin>
+                </Button>
+                <Label contentDisplay="CENTER" layoutX="15.0" layoutY="48.0" text="Output" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" right="8.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </GridPane.margin>
+                </Label>
+            </GridPane>
+        </AnchorPane>
+    </top>
+
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+</BorderPane>
