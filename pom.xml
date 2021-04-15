@@ -6,7 +6,7 @@
 
     <groupId>io.github.bluelhf</groupId>
     <artifactId>Mineview</artifactId>
-    <version>0000</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

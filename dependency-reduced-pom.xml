@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.bluelhf</groupId>
   <artifactId>Mineview</artifactId>
-  <version>0000</version>
+  <version>0001</version>
   <build>
     <plugins>
       <plugin>

@@ -31,13 +31,11 @@ import java.util.concurrent.locks.LockSupport;
 
 public class Model {
     private ObservableList<Version> allVersions;
-    private File outputDirectory = Paths.get(MineView.class.getProtectionDomain().getPermissions()
-            .elements().nextElement().getName()).getParent().toFile();
+    private File outputDirectory = Paths.get(".").toFile();
     private final SimpleBooleanProperty hasVersionsProperty = new SimpleBooleanProperty(false);
-    private Observable<State> state = new Observable<State>(State.idle());
+    private final Observable<State> state = new Observable<State>(State.idle());
     public void init() {
-        outputDirectory = Paths.get(MineView.class.getProtectionDomain().getPermissions()
-                .elements().nextElement().getName()).getParent().toFile();
+        outputDirectory = Paths.get(".").toFile();
         state.set(State.idle());
         if (!hasVersionsProperty.get()) allVersions = fetchVersions();
     }
