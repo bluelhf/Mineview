@@ -11,8 +11,6 @@ import org.objectweb.asm.tree.ClassNode;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -22,6 +20,10 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.JarOutputStream;
 
+/**
+ * @author SuspiciousActivity
+ * @see <a href="https://github.com/SuspiciousActivity/ProGuard-Unmapper">ProGuard-Unmapper on GitHub</a>
+ * */
 public class Unmapper implements Opcodes {
 
     private final HashMap<JarEntry, byte[]> OTHER_FILES = new HashMap<>();
