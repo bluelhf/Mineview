@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("unchecked")
 public class LineLogger {
     private final ObservableList<String> log = FXCollections.observableList(new ArrayList<>());
 
