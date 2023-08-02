@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.*;
 
 import java.io.*;
@@ -46,6 +47,7 @@ public class Mineview extends Application {
         this.stage = stage;
 
         stage.setTitle("Mineview");
+        stage.getIcons().add(new Image("assets/logo.png"));
         stage.setScene(new Scene(parent));
         stage.show();
     }
