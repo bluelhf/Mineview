@@ -85,9 +85,6 @@
                     <mainClass>blue.lhf.mineview/blue.lhf.mineview.Mineview</mainClass>
                     <launcher>mineview</launcher>
                     <jlinkImageName>mineview</jlinkImageName>
-                    <options>
-                        <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6969</option>
-                    </options>
                 </configuration>
             </plugin>
         </plugins>
