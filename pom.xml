@@ -62,16 +62,6 @@
             <artifactId>asm-commons</artifactId>
             <version>9.5</version>
         </dependency>
-        <dependency>
-            <groupId>net.sf.proguard</groupId>
-            <artifactId>proguard-base</artifactId>
-            <version>6.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>net.java.truevfs</groupId>
-            <artifactId>truevfs-driver-http</artifactId>
-            <version>0.14.0</version>
-        </dependency>
     </dependencies>
 
     <build>

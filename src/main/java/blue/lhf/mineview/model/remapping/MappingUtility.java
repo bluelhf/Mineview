@@ -1,10 +1,5 @@
 package blue.lhf.mineview.model.remapping;
 
-import proguard.obfuscate.MappingProcessor;
-
-/**
- * MappingReader adapted from {@link proguard.obfuscate.MappingReader}.
- * */
 public final class MappingUtility {
     private MappingUtility() {
 

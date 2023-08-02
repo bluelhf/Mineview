@@ -1,7 +1,5 @@
 package blue.lhf.mineview.model.remapping;
 
-import proguard.obfuscate.MappingProcessor;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiConsumer;

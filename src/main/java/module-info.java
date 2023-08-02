@@ -29,5 +29,4 @@ module blue.lhf.mineview {
 
     requires org.objectweb.asm;
     requires org.objectweb.asm.commons;
-    requires proguard.base;
 }
