@@ -14,6 +14,7 @@ module blue.lhf.mineview {
     exports blue.lhf.mineview.model to com.fasterxml.jackson.databind;
     exports blue.lhf.mineview.model.procedure to com.fasterxml.jackson.databind;
     opens blue.lhf.mineview.model.logging to javafx.fxml;
+    opens assets;
 
     requires javafx.graphics;
     requires javafx.controls;
