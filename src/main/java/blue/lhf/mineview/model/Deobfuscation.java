@@ -105,7 +105,7 @@ public class Deobfuscation extends Procedure<Deobfuscation.State> {
                     context.getProgress() / (double) context.getTotal() * 100));
             context.addProgress(increment);
         }); final BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
-            lines = reader.lines().filter(s -> !s.trim().startsWith("#")).toList();
+            lines = reader.lines().map(String::trim).filter(trim -> !trim.startsWith("#")).toList();
         }
 
         final RemapperProcessor processor = new RemapperProcessor();
